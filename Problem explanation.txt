@@ -1,0 +1,10 @@
+In simple words, the code is solving a problem related to a tree data structure. The tree consists of nodes, and each node has a value associated with it. The code performs two types of queries:
+
+1. Find Query: Given two nodes in the tree, it finds the greatest common divisor (gcd) of the values along the unique path between those nodes.
+2. Change Query: Given two nodes and an increment value, it adds the increment value to the values along the unique path between those nodes.
+
+To solve the problem, the code uses a depth-first traversal of the tree to calculate values for each node based on its parent's value. It stores these calculated values in a list. Then, for each query, it traverses the paths from the given nodes to their common ancestor and calculates the desired result based on the values of the nodes on the path.
+
+The code uses a combination of dictionaries and lists to represent the tree and perform the necessary calculations. It also applies modular arithmetic to keep the calculated values within a specific range.
+
+Overall, the code efficiently processes the queries by precalculating values using dynamic programming and then using them to answer the queries on demand.
