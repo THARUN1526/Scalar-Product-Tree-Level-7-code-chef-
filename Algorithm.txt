@@ -1,0 +1,10 @@
+
+First, the code reads the input values for N (the number of vertices in the tree) and Q (the number of queries). Then it reads the array of integers representing the values on each vertex of the tree. It also initializes two dictionaries, `d` and `k`, to store the parent-child relationships of the tree.
+
+Next, a list `l` is initialized with a single `parent` object representing the root of the tree. The code enters a loop where it pops an element from `l` and calculates the current value `c` based on the parent value and the square of the corresponding vertex value. The calculated value is stored in the list `m`. For each child of the current vertex, a new `parent` object is created with the child as the current vertex and the calculated value `c` as the parent value, and it is added to `l`. This loop essentially performs a depth-first traversal of the tree, calculating the values for each vertex.
+
+After that, the code enters another loop for the queries. For each query, it reads the vertices `u` and `v`. It initializes variables `ans`, `z`, and `y`. The variables `z` and `y` are stacks used for traversing the paths from `u` and `v` to their common ancestor. The code enters a while loop that continues until `z` is empty. In each iteration, it pops the top vertices `x` and `x1` from `z` and `y` respectively. If the vertices `x` and `x1` are the same, it means they have reached their common ancestor, and the code adds the value of `m[x-1]` to the answer. Otherwise, it adds the product of the values on vertices `x` and `x1` to the answer. Then, it adds the children of `x` and `x1` to `z` and `y` respectively for further traversal.
+
+Finally, the code writes the answer to the output, which is the calculated sum modulo `mod`.
+
+In summary, the code traverses the tree to calculate values for each vertex and then performs queries to find the sum of values on the unique path between given vertices in the tree. The approach used combines dynamic programming with a depth-first traversal of the tree.
